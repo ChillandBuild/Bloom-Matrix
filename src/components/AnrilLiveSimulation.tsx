@@ -4,22 +4,22 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 
-type Turn = { from: "lead" | "aira"; text: string };
+type Turn = { from: "lead" | "anril"; text: string };
 
 /**
- * An illustrative inbound conversation — AIRA is multi-tenant, so this stands
+ * An illustrative inbound conversation — Anril is multi-tenant, so this stands
  * in for an enquiry arriving on a customer's own channel. Deliberately generic:
  * no named person or company, nothing that could read as a real client.
  */
 const CONVERSATION: Turn[] = [
   { from: "lead", text: "Hi — do you supply in bulk for retail stores?" },
   {
-    from: "aira",
+    from: "anril",
     text: "We do. Wholesale pricing starts at 50 units, with distributor rates above 150. What volume are you planning?",
   },
   { from: "lead", text: "Around 200 units a month." },
   {
-    from: "aira",
+    from: "anril",
     text: "That qualifies for the distributor rate. I'm handing you to the team now — they'll call within the hour.",
   },
 ];
@@ -33,17 +33,17 @@ const HOLD_DELAY = 3800;
 
 function delayFor(revealed: number): number {
   if (revealed >= CONVERSATION.length) return HOLD_DELAY;
-  return CONVERSATION[revealed].from === "aira" ? TYPING_DELAY : LEAD_DELAY;
+  return CONVERSATION[revealed].from === "anril" ? TYPING_DELAY : LEAD_DELAY;
 }
 
-type AiraLiveSimulationProps = {
+type AnrilLiveSimulationProps = {
   /** Fires once per loop, after the conversation has held on its final
    *  state for the usual pause — right before it would restart. Optional;
    *  standalone usage (no prop passed) behaves exactly as before. */
   onCycleComplete?: () => void;
 };
 
-export default function AiraLiveSimulation({ onCycleComplete }: AiraLiveSimulationProps = {}) {
+export default function AnrilLiveSimulation({ onCycleComplete }: AnrilLiveSimulationProps = {}) {
   const reducedMotion = usePrefersReducedMotion();
 
   // A single monotonic counter drives everything: which turns are visible and
@@ -54,7 +54,7 @@ export default function AiraLiveSimulation({ onCycleComplete }: AiraLiveSimulati
   const cycle = Math.floor(tick / TOTAL_STEPS);
   const revealed = reducedMotion ? CONVERSATION.length : tick % TOTAL_STEPS;
   const isTyping =
-    !reducedMotion && revealed < CONVERSATION.length && CONVERSATION[revealed].from === "aira";
+    !reducedMotion && revealed < CONVERSATION.length && CONVERSATION[revealed].from === "anril";
   const isComplete = revealed >= CONVERSATION.length;
 
   useEffect(() => {
@@ -75,7 +75,7 @@ export default function AiraLiveSimulation({ onCycleComplete }: AiraLiveSimulati
         <div className="flex items-center gap-2">
           <span className="w-1.5 h-1.5 rounded-full bg-oxblood animate-pulse" aria-hidden />
           <span className="font-inter text-[11px] uppercase tracking-[0.16em] text-cream font-bold">
-            AIRA
+            Anril
           </span>
         </div>
         <span className="font-inter text-[10px] uppercase tracking-[0.14em] text-cream/70 border border-cream/25 rounded-[2px] px-2 py-1">
@@ -99,7 +99,7 @@ export default function AiraLiveSimulation({ onCycleComplete }: AiraLiveSimulati
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
               className={
-                turn.from === "aira"
+                turn.from === "anril"
                   ? "self-end max-w-[85%] bg-cream text-ink rounded-[2px] px-4 py-3"
                   : "self-start max-w-[80%] border border-cream/30 text-cream rounded-[2px] px-4 py-3"
               }

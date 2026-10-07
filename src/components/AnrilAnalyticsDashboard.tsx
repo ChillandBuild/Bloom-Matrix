@@ -8,7 +8,7 @@ type LeadCategory = "hot" | "warm" | "cold";
 
 /**
  * Illustrative sample figures — same "no real client/company" spirit as
- * AiraLiveSimulation's conversation copy. Percentages are always derived
+ * AnrilLiveSimulation's conversation copy. Percentages are always derived
  * from the counts below, never hand-typed, so they can't drift out of sync.
  */
 const LEADS: Record<LeadCategory, number> = { hot: 684, warm: 1126, cold: 1037 };
@@ -50,7 +50,7 @@ const INSIGHTS_START = TREND_START + TREND_DURATION + 0.3;
 const INSIGHTS_STAGGER = 0.35;
 const HOLD_AFTER_INSIGHTS = 3200;
 
-type AiraAnalyticsDashboardProps = {
+type AnrilAnalyticsDashboardProps = {
   /** Called once, after the full choreography has played and held. */
   onFinished?: () => void;
 };
@@ -153,7 +153,7 @@ function TrendLine() {
   );
 }
 
-export default function AiraAnalyticsDashboard({ onFinished }: AiraAnalyticsDashboardProps) {
+export default function AnrilAnalyticsDashboard({ onFinished }: AnrilAnalyticsDashboardProps) {
   const [insightsShown, setInsightsShown] = useState(0);
 
   useEffect(() => {
@@ -177,7 +177,7 @@ export default function AiraAnalyticsDashboard({ onFinished }: AiraAnalyticsDash
         <div className="flex items-center gap-2">
           <span className="w-1.5 h-1.5 rounded-full bg-oxblood animate-pulse" aria-hidden />
           <span className="font-inter text-[11px] uppercase tracking-[0.16em] text-cream font-bold">
-            AIRA
+            Anril
           </span>
         </div>
         <span className="font-inter text-[10px] uppercase tracking-[0.14em] text-cream/70 border border-cream/25 rounded-[2px] px-2 py-1">

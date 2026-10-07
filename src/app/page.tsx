@@ -12,7 +12,7 @@ import CTABand from "@/components/CTABand";
 export const metadata: Metadata = {
   title: "Bloom Matrix | AI-First Product Engineering Company",
   description:
-    "Bloom Matrix designs, engineers, and continuously evolves intelligent digital products, enterprise software, and AI-powered platforms — including AIRA, our AI revenue acceleration platform.",
+    "Bloom Matrix designs, engineers, and continuously evolves intelligent digital products, enterprise software, and AI-powered platforms — including Anril, our AI revenue acceleration platform.",
 };
 
 export default function Home() {

@@ -14,7 +14,7 @@ To prevent context dilution, general invariants and rules are split into modular
     *   Read when: Starting a new session or reviewing coding style, formatting, and response conventions.
 2.  **Invariants, Tech Stack & File Map**:
     *   Location: `.agents/context/stack-and-rules.md`
-    *   Read when: Touching the Aira `vercel.json` rewrite, the contact form, page routing, or Next.js/Tailwind config.
+    *   Read when: Touching the Anril (formerly Aira) `vercel.json` rewrite, the contact form, page routing, or Next.js/Tailwind config.
 3.  **Historical Decisions & Migrations**:
     *   Location: `.agents/decisions/log.md`
     *   Read when: Seeking context on why a module was built/dropped, or checking migration history.

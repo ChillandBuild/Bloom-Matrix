@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
-import AiraProductDemo from "@/components/AiraProductDemo";
+import AnrilProductDemo from "@/components/AnrilProductDemo";
 import CTABand from "@/components/CTABand";
 import BrandHeadline from "@/components/brand/BrandHeadline";
 import { PRODUCTS } from "@/lib/content/products";
@@ -10,7 +10,7 @@ import { PRODUCTS } from "@/lib/content/products";
 export const metadata: Metadata = {
   title: "Products",
   description:
-    "Bloom Matrix's proprietary products: AIRA, the AI-powered revenue acceleration platform, and AstroTamil, a consumer technology platform.",
+    "Bloom Matrix's proprietary products: Anril, the AI-powered revenue acceleration platform, and AstroTamil, a consumer technology platform.",
 };
 
 export default function ProductsPage() {
@@ -44,7 +44,7 @@ export default function ProductsPage() {
                   />
                   <p
                     className={`font-inter text-ink/65 leading-relaxed mb-6 ${
-                      product.slug === "aira" ? "flex-1" : ""
+                      product.slug === "anril" ? "flex-1" : ""
                     }`}
                   >
                     {product.description}
@@ -63,11 +63,11 @@ export default function ProductsPage() {
                     href={product.href}
                     className="font-inter font-semibold text-ink border-b-2 border-platinum pb-0.5 hover:border-oxblood transition-colors self-start"
                   >
-                    {product.slug === "aira" ? "Explore AIRA →" : "Learn more →"}
+                    {product.slug === "anril" ? "Explore Anril →" : "Learn more →"}
                   </Link>
-                  {product.slug === "aira" && (
+                  {product.slug === "anril" && (
                     <div className="mt-8">
-                      <AiraProductDemo />
+                      <AnrilProductDemo />
                     </div>
                   )}
                 </div>

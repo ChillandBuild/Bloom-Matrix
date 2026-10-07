@@ -2,29 +2,29 @@
 
 import { useCallback, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import AiraLiveSimulation from "@/components/AiraLiveSimulation";
-import AiraAnalyticsDashboard from "@/components/AiraAnalyticsDashboard";
-import AiraTelecallerPerformance from "@/components/AiraTelecallerPerformance";
+import AnrilLiveSimulation from "@/components/AnrilLiveSimulation";
+import AnrilAnalyticsDashboard from "@/components/AnrilAnalyticsDashboard";
+import AnrilTelecallerPerformance from "@/components/AnrilTelecallerPerformance";
 
 type Scene = "whatsapp" | "dashboard" | "telecaller";
 
 const SCENE_TRANSITION = { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const };
 
 /**
- * Product-demo shell: the WhatsApp conversation (AiraLiveSimulation, kept
+ * Product-demo shell: the WhatsApp conversation (AnrilLiveSimulation, kept
  * exactly as it behaves standalone) plays to its hold state, then this
  * cross-fades through the animated lead-analytics dashboard and the
  * telecaller assignment/performance scene, then back to WhatsApp — a
- * looping "customer talks to AIRA -> AIRA scores the lead -> AIRA assigns
+ * looping "customer talks to Anril -> Anril scores the lead -> Anril assigns
  * and tracks the team" demo.
  *
  * Mounting each scene fresh on every visit is what makes the loop work:
- * AiraLiveSimulation's own tick state resets to 0, so it naturally replays
+ * AnrilLiveSimulation's own tick state resets to 0, so it naturally replays
  * its conversation from the top without any extra reset wiring here. All
  * three scenes share one fixed card height (below) so nothing jumps at the
  * cross-fades — Scene 3 is the tallest content, the others just get room.
  */
-export default function AiraProductDemo() {
+export default function AnrilProductDemo() {
   const [scene, setScene] = useState<Scene>("whatsapp");
 
   const showDashboard = useCallback(() => setScene("dashboard"), []);
@@ -43,7 +43,7 @@ export default function AiraProductDemo() {
             transition={SCENE_TRANSITION}
             className="flex-1 flex flex-col"
           >
-            <AiraLiveSimulation onCycleComplete={showDashboard} />
+            <AnrilLiveSimulation onCycleComplete={showDashboard} />
           </motion.div>
         )}
         {scene === "dashboard" && (
@@ -55,7 +55,7 @@ export default function AiraProductDemo() {
             transition={SCENE_TRANSITION}
             className="flex-1 flex flex-col"
           >
-            <AiraAnalyticsDashboard onFinished={showTelecaller} />
+            <AnrilAnalyticsDashboard onFinished={showTelecaller} />
           </motion.div>
         )}
         {scene === "telecaller" && (
@@ -67,7 +67,7 @@ export default function AiraProductDemo() {
             transition={SCENE_TRANSITION}
             className="flex-1 flex flex-col"
           >
-            <AiraTelecallerPerformance onFinished={showWhatsApp} />
+            <AnrilTelecallerPerformance onFinished={showWhatsApp} />
           </motion.div>
         )}
       </AnimatePresence>

@@ -35,10 +35,10 @@ export default function CTABand({
               Start a project
             </Link>
             <Link
-              href="/products/aira"
+              href="/products/anril"
               className="bg-oxblood text-cream px-8 py-4 rounded-[2px] font-semibold text-center hover:opacity-90 transition-all"
             >
-              Explore AIRA
+              Explore Anril
             </Link>
           </div>
         </Reveal>

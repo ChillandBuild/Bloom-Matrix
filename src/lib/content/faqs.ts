@@ -4,7 +4,7 @@ export const HOME_FAQS: FAQItem[] = [
   {
     question: "Is Bloom Matrix a software development agency or a product company?",
     answer:
-      "Bloom Matrix is a product engineering and technology company, not a freelance development agency or IT service provider. It designs, builds, and continuously evolves proprietary products and SaaS platforms — including AIRA — alongside custom enterprise engagements, combining product thinking with long-term engineering ownership.",
+      "Bloom Matrix is a product engineering and technology company, not a freelance development agency or IT service provider. It designs, builds, and continuously evolves proprietary products and SaaS platforms — including Anril — alongside custom enterprise engagements, combining product thinking with long-term engineering ownership.",
   },
   {
     question: "What does Bloom Matrix actually build?",
@@ -12,9 +12,9 @@ export const HOME_FAQS: FAQItem[] = [
       "Bloom Matrix builds AI systems, enterprise applications, multi-tenant SaaS platforms, business automation, and data & analytics tooling, plus consumer technology products such as AstroTamil.",
   },
   {
-    question: "What is AIRA?",
+    question: "What is Anril?",
     answer:
-      "AIRA is Bloom Matrix's flagship AI-powered Revenue Acceleration Platform — a multi-tenant SaaS product combining conversational AI, AI and manual telecalling, CRM, lead management, and workflow automation to turn enquiries into revenue activity.",
+      "Anril is Bloom Matrix's flagship AI-powered Revenue Acceleration Platform — a multi-tenant SaaS product combining conversational AI, AI and manual telecalling, CRM, lead management, and workflow automation to turn enquiries into revenue activity.",
   },
   {
     question: "What industries does Bloom Matrix work with?",
@@ -37,7 +37,7 @@ export const SERVICES_FAQS: FAQItem[] = [
   {
     question: "Does Bloom Matrix only build custom software, or also its own products?",
     answer:
-      "Both. Bloom Matrix operates across services and products simultaneously — custom engineering for customers, plus proprietary SaaS products like AIRA, built and owned by Bloom Matrix.",
+      "Both. Bloom Matrix operates across services and products simultaneously — custom engineering for customers, plus proprietary SaaS products like Anril, built and owned by Bloom Matrix.",
   },
   {
     question: "Can Bloom Matrix integrate AI into an existing system rather than building from scratch?",
@@ -64,20 +64,20 @@ export const ABOUT_FAQS: FAQItem[] = [
   },
 ];
 
-export const AIRA_FAQS: FAQItem[] = [
+export const ANRIL_FAQS: FAQItem[] = [
   {
-    question: "What is AIRA used for?",
+    question: "What is Anril used for?",
     answer:
-      "AIRA is used to turn inbound enquiries into qualified, routed, and logged revenue activity — combining AI assistants, AI and manual telecalling, CRM, lead management, and workflow automation in one multi-tenant SaaS platform.",
+      "Anril is used to turn inbound enquiries into qualified, routed, and logged revenue activity — combining AI assistants, AI and manual telecalling, CRM, lead management, and workflow automation in one multi-tenant SaaS platform.",
   },
   {
-    question: "Is AIRA a CRM, a telecalling tool, or an AI assistant?",
+    question: "Is Anril a CRM, a telecalling tool, or an AI assistant?",
     answer:
-      "AIRA is all three at once — it combines CRM and lead management capabilities, AI and manual telecalling, omnichannel communication, and workflow automation, rather than requiring separate tools stitched together.",
+      "Anril is all three at once — it combines CRM and lead management capabilities, AI and manual telecalling, omnichannel communication, and workflow automation, rather than requiring separate tools stitched together.",
   },
   {
-    question: "Does each AIRA customer manage their own data and channels?",
+    question: "Does each Anril customer manage their own data and channels?",
     answer:
-      "Yes. AIRA is built on multi-tenant SaaS architecture — each customer connects and manages their own communication channels and business data independently.",
+      "Yes. Anril is built on multi-tenant SaaS architecture — each customer connects and manages their own communication channels and business data independently.",
   },
 ];

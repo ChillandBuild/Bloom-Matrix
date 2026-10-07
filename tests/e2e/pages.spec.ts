@@ -4,7 +4,7 @@ const PAGES = [
   { name: "home", path: "/" },
   { name: "services", path: "/services" },
   { name: "products", path: "/products" },
-  { name: "aira", path: "/products/aira" },
+  { name: "anril", path: "/products/anril" },
   { name: "about", path: "/about" },
   { name: "contact", path: "/contact" },
 ];

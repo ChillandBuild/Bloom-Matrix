@@ -1,26 +1,26 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
-import AiraLiveSimulation from "@/components/AiraLiveSimulation";
+import AnrilLiveSimulation from "@/components/AnrilLiveSimulation";
 import FAQAccordion from "@/components/FAQAccordion";
 import CTABand from "@/components/CTABand";
 import BrandHeadline from "@/components/brand/BrandHeadline";
-import { AIRA } from "@/lib/content/products";
-import { AIRA_FAQS } from "@/lib/content/faqs";
+import { ANRIL } from "@/lib/content/products";
+import { ANRIL_FAQS } from "@/lib/content/faqs";
 
 export const metadata: Metadata = {
-  title: "AIRA — AI Revenue Acceleration Platform",
+  title: "Anril — AI Revenue Acceleration Platform",
   description:
-    "AIRA is Bloom Matrix's AI-powered revenue acceleration platform — conversational AI, AI telecalling, CRM, lead management, and workflow automation in one multi-tenant SaaS system.",
+    "Anril is Bloom Matrix's AI-powered revenue acceleration platform — conversational AI, AI telecalling, CRM, lead management, and workflow automation in one multi-tenant SaaS system.",
 };
 
-export default function AiraPage() {
+export default function AnrilPage() {
   return (
     <main>
       <PageHero
         eyebrow="Flagship Product"
-        titleSegments={[{ text: AIRA.name }]}
-        description={AIRA.tagline}
+        titleSegments={[{ text: ANRIL.name }]}
+        description={ANRIL.tagline}
       />
 
       <section className="bg-cream py-24">
@@ -35,9 +35,9 @@ export default function AiraPage() {
               ]}
               className="text-3xl text-ink mb-4"
             />
-            <p className="font-inter text-ink/65 leading-relaxed mb-8">{AIRA.description}</p>
+            <p className="font-inter text-ink/65 leading-relaxed mb-8">{ANRIL.description}</p>
             <ul className="space-y-3">
-              {AIRA.features.map((feature) => (
+              {ANRIL.features.map((feature) => (
                 <li key={feature} className="flex items-center gap-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-oxblood shrink-0" aria-hidden />
                   <span className="font-inter text-ink">{feature}</span>
@@ -46,7 +46,7 @@ export default function AiraPage() {
             </ul>
           </Reveal>
           <Reveal delay={0.15}>
-            <AiraLiveSimulation />
+            <AnrilLiveSimulation />
           </Reveal>
         </div>
       </section>
@@ -59,12 +59,12 @@ export default function AiraPage() {
             </p>
             <BrandHeadline
               as="h2"
-              segments={[{ text: "Questions about " }, { text: "AIRA", emphasis: true }, { text: "." }]}
+              segments={[{ text: "Questions about " }, { text: "Anril", emphasis: true }, { text: "." }]}
               className="text-4xl text-ink"
             />
           </Reveal>
           <Reveal delay={0.1}>
-            <FAQAccordion items={AIRA_FAQS} />
+            <FAQAccordion items={ANRIL_FAQS} />
           </Reveal>
         </div>
       </section>
@@ -72,10 +72,10 @@ export default function AiraPage() {
       <CTABand
         titleSegments={[
           { text: "See " },
-          { text: "AIRA", emphasis: true },
+          { text: "Anril", emphasis: true },
           { text: " in action." },
         ]}
-        description="Book a strategy call and we'll walk through how AIRA fits into your existing lead and revenue workflows."
+        description="Book a strategy call and we'll walk through how Anril fits into your existing lead and revenue workflows."
       />
     </main>
   );

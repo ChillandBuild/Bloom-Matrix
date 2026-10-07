@@ -124,7 +124,8 @@ directly for consumers.
 
 ## Products
 
-### AIRA
+### Anril
+(Renamed from AIRA/Aira on 2026-10-07.)
 Bloom Matrix's flagship AI-powered Revenue Acceleration Platform. Provides
 intelligent customer engagement, omnichannel communication, CRM capabilities,
 lead management, AI assistants, AI telecalling, manual telecalling,
@@ -132,7 +133,10 @@ analytics, workflow automation, and integrations. Multi-tenant SaaS
 architecture — each customer connects and manages their own communication
 channels and business data.
 (Live at `https://aira-ai-mvp.vercel.app/`, linked from the landing page and
-proxied via `/aira` in `vercel.json` — see [[stack-and-rules]].)
+proxied via `/aira` in `vercel.json` — see [[stack-and-rules]]. The external app
+still lives at the old aira-ai-mvp URL; rewrite path `/aira` unchanged. The
+product page route is `/products/anril`; `/products/aira` permanently redirects
+to it via `next.config.ts` redirects.)
 
 ### AstroTamil
 A consumer technology platform delivering spirituality, lifestyle, and

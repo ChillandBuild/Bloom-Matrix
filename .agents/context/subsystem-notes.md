@@ -29,8 +29,14 @@ same component is used directly in `SiteHeader.tsx`'s logo link (previously
 plain text). See [[log]] for the dated decision entry — the "never restyle"
 guidance no longer applies to this component.
 
-## AIRA cross-link
+## Anril cross-link
 The "Featured Product" section in `src/app/page.tsx` links out to
 `https://aira-ai-mvp.vercel.app/`, and `vercel.json` also rewrites `/aira` to
-that same external deployment. If Aira's routing/deployment changes, both
+that same external deployment. If Anril's routing/deployment changes, both
 places need updating together.
+
+Gotcha: the brand is Anril (formerly Aira), but the `vercel.json` rewrite path
+`/aira` and the external deployment `aira-ai-mvp.vercel.app` still use the old
+name — rename only when that external project is renamed. The on-site product
+page is `/products/anril`; `/products/aira` permanently redirects to it via
+`next.config.ts` redirects.

@@ -7,12 +7,12 @@ export type Product = {
   href: string;
 };
 
-export const AIRA: Product = {
-  slug: "aira",
-  name: "AIRA",
+export const ANRIL: Product = {
+  slug: "anril",
+  name: "Anril",
   tagline: "AI-Powered Revenue Acceleration Platform",
   description:
-    "AIRA is Bloom Matrix's flagship product — a multi-tenant SaaS platform that turns inbound enquiries into qualified, routed, and logged revenue activity. It combines intelligent customer engagement, omnichannel communication, CRM capabilities, lead management, AI assistants, AI telecalling, and workflow automation in one system, with each customer managing their own communication channels and business data.",
+    "Anril is Bloom Matrix's flagship product — a multi-tenant SaaS platform that turns inbound enquiries into qualified, routed, and logged revenue activity. It combines intelligent customer engagement, omnichannel communication, CRM capabilities, lead management, AI assistants, AI telecalling, and workflow automation in one system, with each customer managing their own communication channels and business data.",
   features: [
     "Intelligent Customer Engagement",
     "Omnichannel Communication",
@@ -22,7 +22,7 @@ export const AIRA: Product = {
     "Analytics & Workflow Automation",
     "Third-Party Integrations",
   ],
-  href: "/products/aira",
+  href: "/products/anril",
 };
 
 export const ASTROTAMIL: Product = {
@@ -35,4 +35,4 @@ export const ASTROTAMIL: Product = {
   href: "/products",
 };
 
-export const PRODUCTS: Product[] = [AIRA, ASTROTAMIL];
+export const PRODUCTS: Product[] = [ANRIL, ASTROTAMIL];

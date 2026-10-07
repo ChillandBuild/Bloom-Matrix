@@ -21,11 +21,12 @@
 - Hosting: Vercel (`vercel.json`), `npm run dev|build|start` map to
   `next dev|build|start`.
 - No backend/DB in this repo — it's a marketing landing page + a contact form
-  (`src/components/ContactForm.tsx`) and an external product (Aira) linked in.
+  (`src/components/ContactForm.tsx`) and an external product (Anril) linked in.
 
 ## Hard Invariants
 - `vercel.json` rewrites `/aira` and `/aira/:path*` to the separately deployed
-  `https://aira-ai-mvp.vercel.app` app — don't remove without confirming Aira
+  `https://aira-ai-mvp.vercel.app` app (the external app still lives at the old aira-ai-mvp URL; rewrite path
+  `/aira` unchanged) — don't remove without confirming Anril
   routing is meant to move elsewhere.
 - `tsconfig.json` strict mode must stay on.
 - The `src/app` Next.js app is the tracked, real implementation. Do not treat
@@ -34,7 +35,7 @@
 
 ## File Map
 - `src/app/layout.tsx` — root layout, fonts, global metadata.
-- `src/app/page.tsx` — the single landing page: hero, services bento, Aira
+- `src/app/page.tsx` — the single landing page: hero, services bento, Anril
   product callout, contact form, "Why Bloom Matrix" section, footer.
 - `src/components/SiteHeader.tsx` / `SiteFooter.tsx` — shared chrome.
 - `src/components/brand/` — the brand primitives. `BrandFlower` is the single

@@ -112,7 +112,7 @@ function AssignmentView() {
         <div className="flex items-center gap-2">
           <span className="w-1.5 h-1.5 rounded-full bg-oxblood animate-pulse" aria-hidden />
           <span className="font-inter text-[11px] uppercase tracking-[0.16em] text-cream font-bold">
-            AIRA
+            Anril
           </span>
         </div>
         <span className="font-inter text-[10px] uppercase tracking-[0.14em] text-cream/70 border border-cream/25 rounded-[2px] px-2 py-1">
@@ -193,7 +193,7 @@ function AssignmentView() {
             className="font-inter text-[11px] text-cream/85 flex items-center gap-2"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-oxblood shrink-0" aria-hidden />
-            AIRA recommends Arun for this lead based on prior conversion performance.
+            Anril recommends Arun for this lead based on prior conversion performance.
           </motion.p>
         )}
       </div>
@@ -276,7 +276,7 @@ function PerformanceView({ onFinished }: { onFinished?: () => void }) {
         <div className="flex items-center gap-2">
           <span className="w-1.5 h-1.5 rounded-full bg-oxblood animate-pulse" aria-hidden />
           <span className="font-inter text-[11px] uppercase tracking-[0.16em] text-cream font-bold">
-            AIRA
+            Anril
           </span>
         </div>
         <span className="font-inter text-[10px] uppercase tracking-[0.14em] text-cream/70 border border-cream/25 rounded-[2px] px-2 py-1">
@@ -354,12 +354,12 @@ function PerformanceView({ onFinished }: { onFinished?: () => void }) {
 
 type SubScene = "assign" | "performance";
 
-type AiraTelecallerPerformanceProps = {
+type AnrilTelecallerPerformanceProps = {
   /** Called once, after both sub-scenes have played and held. */
   onFinished?: () => void;
 };
 
-export default function AiraTelecallerPerformance({ onFinished }: AiraTelecallerPerformanceProps) {
+export default function AnrilTelecallerPerformance({ onFinished }: AnrilTelecallerPerformanceProps) {
   const [subScene, setSubScene] = useState<SubScene>("assign");
 
   useEffect(() => {

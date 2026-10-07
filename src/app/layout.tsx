@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     template: "%s | Bloom Matrix",
   },
   description:
-    "Bloom Matrix designs, engineers, and continuously evolves intelligent digital products, enterprise software, and AI-powered platforms — including AIRA, our AI revenue acceleration platform. A single long-term technology partner, not another vendor.",
+    "Bloom Matrix designs, engineers, and continuously evolves intelligent digital products, enterprise software, and AI-powered platforms — including Anril, our AI revenue acceleration platform. A single long-term technology partner, not another vendor.",
   openGraph: {
     title: "Bloom Matrix | AI-First Product Engineering Company",
     description:
