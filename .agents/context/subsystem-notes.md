@@ -31,14 +31,16 @@ guidance no longer applies to this component.
 
 ## Anril cross-link
 The live Anril app is served at `/anril` via `vercel.json` rewrites to the
-external deployment `https://aira-ai-mvp.vercel.app/aira`. The Anril product
+external deployment `https://anrilai.vercel.app/anril`. The Anril product
 page's CTA ("Open Anril") links there with a plain `<a>` (CTABand
 `secondaryCta.isExternalApp`) — `next/link` would try to client-route a path
 this app doesn't own.
 
-Gotcha: the brand is Anril (formerly Aira), but the external app is still built
-with basePath `/aira`, so its assets and internal links use `/aira/...` — keep
-the `/aira` rewrites or `/anril` breaks too. Its in-app branding (logo, title
-"Aira AI") also still says Aira; that lives in the aira-ai-mvp project, not
-here. The on-site product page is `/products/anril`; `/products/aira`
-permanently redirects to it via `next.config.ts` redirects.
+Gotcha: the external app is built with basePath `/anril`, so everything it
+serves (pages, `_next` assets, icons) lives under `/anril/...` and its root `/`
+is a 404 — rewrites must keep the `/anril` prefix on the destination. Old
+`/aira` URLs redirect (308) to `/anril` in `vercel.json`. History: the app was
+first at `aira-ai-mvp.vercel.app/aira`; that deployment was removed
+(DEPLOYMENT_NOT_FOUND on 2026-10-07), which blanked `/anril` until the
+destinations were repointed. The on-site product page is `/products/anril`;
+`/products/aira` permanently redirects to it via `next.config.ts` redirects.

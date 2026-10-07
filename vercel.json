@@ -1,20 +1,24 @@
 {
-  "rewrites": [
-    {
-      "source": "/anril",
-      "destination": "https://aira-ai-mvp.vercel.app/aira"
-    },
-    {
-      "source": "/anril/:path*",
-      "destination": "https://aira-ai-mvp.vercel.app/aira/:path*"
-    },
+  "redirects": [
     {
       "source": "/aira",
-      "destination": "https://aira-ai-mvp.vercel.app/aira"
+      "destination": "/anril",
+      "permanent": true
     },
     {
       "source": "/aira/:path*",
-      "destination": "https://aira-ai-mvp.vercel.app/aira/:path*"
+      "destination": "/anril/:path*",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/anril",
+      "destination": "https://anrilai.vercel.app/anril"
+    },
+    {
+      "source": "/anril/:path*",
+      "destination": "https://anrilai.vercel.app/anril/:path*"
     }
   ]
 }

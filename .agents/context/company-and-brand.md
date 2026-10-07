@@ -132,12 +132,10 @@ lead management, AI assistants, AI telecalling, manual telecalling,
 analytics, workflow automation, and integrations. Multi-tenant SaaS
 architecture — each customer connects and manages their own communication
 channels and business data.
-(Live at `https://aira-ai-mvp.vercel.app/`, linked from the landing page and
-served publicly at `www.bloommatrix.in/anril` via `vercel.json` — see
-[[stack-and-rules]]. The external app still lives at the old aira-ai-mvp URL and
-its in-app branding still says Aira until that project is renamed. The
-product page route is `/products/anril`; `/products/aira` permanently redirects
-to it via `next.config.ts` redirects.)
+(The live app is deployed at `https://anrilai.vercel.app/anril` and served
+publicly at `www.bloommatrix.in/anril` via `vercel.json` — see
+[[stack-and-rules]]. The product page route is `/products/anril`;
+`/products/aira` permanently redirects to it via `next.config.ts` redirects.)
 
 ### AstroTamil
 A consumer technology platform delivering spirituality, lifestyle, and
