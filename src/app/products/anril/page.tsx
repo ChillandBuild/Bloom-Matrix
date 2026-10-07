@@ -76,6 +76,7 @@ export default function AnrilPage() {
           { text: " in action." },
         ]}
         description="Book a strategy call and we'll walk through how Anril fits into your existing lead and revenue workflows."
+        secondaryCta={{ href: "/anril", label: "Open Anril", isExternalApp: true }}
       />
     </main>
   );

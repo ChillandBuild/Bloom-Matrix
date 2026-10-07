@@ -30,13 +30,15 @@ plain text). See [[log]] for the dated decision entry — the "never restyle"
 guidance no longer applies to this component.
 
 ## Anril cross-link
-The "Featured Product" section in `src/app/page.tsx` links out to
-`https://aira-ai-mvp.vercel.app/`, and `vercel.json` also rewrites `/aira` to
-that same external deployment. If Anril's routing/deployment changes, both
-places need updating together.
+The live Anril app is served at `/anril` via `vercel.json` rewrites to the
+external deployment `https://aira-ai-mvp.vercel.app/aira`. The Anril product
+page's CTA ("Open Anril") links there with a plain `<a>` (CTABand
+`secondaryCta.isExternalApp`) — `next/link` would try to client-route a path
+this app doesn't own.
 
-Gotcha: the brand is Anril (formerly Aira), but the `vercel.json` rewrite path
-`/aira` and the external deployment `aira-ai-mvp.vercel.app` still use the old
-name — rename only when that external project is renamed. The on-site product
-page is `/products/anril`; `/products/aira` permanently redirects to it via
-`next.config.ts` redirects.
+Gotcha: the brand is Anril (formerly Aira), but the external app is still built
+with basePath `/aira`, so its assets and internal links use `/aira/...` — keep
+the `/aira` rewrites or `/anril` breaks too. Its in-app branding (logo, title
+"Aira AI") also still says Aira; that lives in the aira-ai-mvp project, not
+here. The on-site product page is `/products/anril`; `/products/aira`
+permanently redirects to it via `next.config.ts` redirects.

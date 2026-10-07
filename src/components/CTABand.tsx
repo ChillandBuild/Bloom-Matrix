@@ -2,10 +2,24 @@ import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import BrandHeadline, { type HeadlineSegment } from "@/components/brand/BrandHeadline";
 
+type CTALink = {
+  href: string;
+  label: string;
+  /** Plain <a> instead of next/link — needed for paths vercel.json proxies to
+   *  another app (e.g. /anril), which this app's client router can't load. */
+  isExternalApp?: boolean;
+};
+
 type CTABandProps = {
   titleSegments?: HeadlineSegment[];
   description?: string;
+  secondaryCta?: CTALink;
 };
+
+const DEFAULT_SECONDARY_CTA: CTALink = { href: "/products/anril", label: "Explore Anril" };
+
+const BUTTON_CLASS =
+  "bg-oxblood text-cream px-8 py-4 rounded-[2px] font-semibold text-center hover:opacity-90 transition-all";
 
 const DEFAULT_TITLE: HeadlineSegment[] = [
   { text: "Let's build something that " },
@@ -16,6 +30,7 @@ const DEFAULT_TITLE: HeadlineSegment[] = [
 export default function CTABand({
   titleSegments = DEFAULT_TITLE,
   description = "Book a strategy call and talk through what you're building — no sales script, just an engineering-led conversation.",
+  secondaryCta = DEFAULT_SECONDARY_CTA,
 }: CTABandProps) {
   return (
     <section className="bg-ink py-24">
@@ -28,18 +43,18 @@ export default function CTABand({
           />
           <p className="font-inter text-cream/70 mb-10 max-w-xl mx-auto">{description}</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link
-              href="/contact"
-              className="bg-oxblood text-cream px-8 py-4 rounded-[2px] font-semibold text-center hover:opacity-90 transition-all"
-            >
+            <Link href="/contact" className={BUTTON_CLASS}>
               Start a project
             </Link>
-            <Link
-              href="/products/anril"
-              className="bg-oxblood text-cream px-8 py-4 rounded-[2px] font-semibold text-center hover:opacity-90 transition-all"
-            >
-              Explore Anril
-            </Link>
+            {secondaryCta.isExternalApp ? (
+              <a href={secondaryCta.href} className={BUTTON_CLASS}>
+                {secondaryCta.label}
+              </a>
+            ) : (
+              <Link href={secondaryCta.href} className={BUTTON_CLASS}>
+                {secondaryCta.label}
+              </Link>
+            )}
           </div>
         </Reveal>
       </div>

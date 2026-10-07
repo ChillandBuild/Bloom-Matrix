@@ -1,6 +1,14 @@
 {
   "rewrites": [
     {
+      "source": "/anril",
+      "destination": "https://aira-ai-mvp.vercel.app/aira"
+    },
+    {
+      "source": "/anril/:path*",
+      "destination": "https://aira-ai-mvp.vercel.app/aira/:path*"
+    },
+    {
       "source": "/aira",
       "destination": "https://aira-ai-mvp.vercel.app/aira"
     },

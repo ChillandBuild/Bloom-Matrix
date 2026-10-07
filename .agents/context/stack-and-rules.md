@@ -24,10 +24,11 @@
   (`src/components/ContactForm.tsx`) and an external product (Anril) linked in.
 
 ## Hard Invariants
-- `vercel.json` rewrites `/aira` and `/aira/:path*` to the separately deployed
-  `https://aira-ai-mvp.vercel.app` app (the external app still lives at the old aira-ai-mvp URL; rewrite path
-  `/aira` unchanged) — don't remove without confirming Anril
-  routing is meant to move elsewhere.
+- `vercel.json` rewrites `/anril`, `/anril/:path*`, `/aira` and `/aira/:path*` to the
+  separately deployed `https://aira-ai-mvp.vercel.app/aira` app. `/anril` is the public
+  URL; the `/aira` rules MUST stay because that app is built with basePath `/aira` and
+  loads every asset from `/aira/_next/...` — removing them breaks `/anril` too.
+  Don't remove without confirming Anril routing is meant to move elsewhere.
 - `tsconfig.json` strict mode must stay on.
 - The `src/app` Next.js app is the tracked, real implementation. Do not treat
   the untracked root-level `index.html` / `style.css` / `script.js` / `assets/`
