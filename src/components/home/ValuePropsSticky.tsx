@@ -53,7 +53,7 @@ export default function ValuePropsSticky() {
                 style={{ opacity: activeIndex === index ? 1 : 0.3 }}
               >
                 <BrandHeadline
-                  as="h3"
+                  as="h2"
                   segments={[{ text: prop.title }]}
                   className="text-3xl md:text-4xl text-cream mb-3"
                 />

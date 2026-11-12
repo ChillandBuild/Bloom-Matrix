@@ -101,7 +101,13 @@ export default function BrandHeadline({
   const plain = segments.map((s) => s.text).join("");
 
   return (
-    <Tag className={`font-bm-serif ${className ?? ""}`} aria-label={plain}>
+    // aria-label is prohibited on a plain <p>, so paragraphs carry the real
+    // text in a visually hidden span instead; headings keep the label.
+    <Tag
+      className={`font-bm-serif ${className ?? ""}`}
+      aria-label={as === "p" ? undefined : plain}
+    >
+      {as === "p" && <span className="sr-only">{plain}</span>}
       {segments.map((seg, si) => {
         const inner = splitWords(seg.text).map((part, pi) =>
           isWhitespace(part) ? (

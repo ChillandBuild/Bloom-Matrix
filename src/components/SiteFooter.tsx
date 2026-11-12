@@ -92,7 +92,7 @@ export default function SiteFooter() {
             {COUNTRY_PAGES.map((country, index) => (
               <span key={country.href}>
                 {index > 0 && <span aria-hidden> · </span>}
-                <Link href={country.href} className="text-cream/80 hover:text-cream underline-offset-4 hover:underline">
+                <Link href={country.href} className="text-cream/80 hover:text-cream underline underline-offset-4">
                   {country.label}
                 </Link>
               </span>
