@@ -31,7 +31,7 @@ export const SERVICES: Service[] = [
     shortDescription:
       "Enterprise applications, customer platforms, and APIs engineered as long-term products, not one-off projects.",
     longDescription:
-      "Software should be treated as a product, not merely a project. Bloom Matrix's product engineering practice covers enterprise applications, customer-facing platforms, business portals, and the API layer that connects them — architected from day one to be scalable, maintainable, and continuously evolving.",
+      "Software should be treated as a product, not merely a project. Bloom Matrix's product engineering practice covers enterprise applications, customer-facing platforms, business portals, and the API layer that connects them — architected from day one to be scalable, maintainable, and continuously evolving. Bespoke software development for businesses in the UK, the UAE and beyond.",
     capabilities: [
       "Enterprise Applications",
       "Customer & Business Platforms",
@@ -93,7 +93,7 @@ export const SERVICES: Service[] = [
     shortDescription:
       "Marketplace platforms and digital ecosystems built directly for consumers, including vernacular applications.",
     longDescription:
-      "Beyond enterprise software, Bloom Matrix builds consumer-facing digital ecosystems — marketplace platforms and vernacular applications designed for how consumers actually discover and use technology, exemplified by products like AstroTamil.",
+      "Beyond enterprise software, Bloom Matrix builds consumer-facing digital ecosystems — marketplace platforms and vernacular applications designed for how consumers actually discover and use technology, including a live consumer marketplace app that we designed, built and run.",
     capabilities: [
       "Marketplace Platforms",
       "Consumer Digital Ecosystems",

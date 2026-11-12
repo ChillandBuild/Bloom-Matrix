@@ -2,11 +2,14 @@ import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import ContactForm from "@/components/ContactForm";
+import WhatsAppButton, { WhatsAppIcon } from "@/components/WhatsAppButton";
+import { ADDRESS_LINE, CONTACT_EMAIL, PHONE_DISPLAY, WHATSAPP_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Book a strategy call with Bloom Matrix, or reach us directly at bloommatrixtech@gmail.com — Coimbatore, Tamil Nadu, India.",
+    "Talk to Bloom Matrix on WhatsApp at +91 88072 33844, send an enquiry, or email contact@bloommatrix.in. Coimbatore, Tamil Nadu, India.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {
@@ -19,7 +22,7 @@ export default function ContactPage() {
           { text: "what you're building", emphasis: true },
           { text: "." },
         ]}
-        description="Tell us about your project and one of our engineering leads will follow up within 24 hours."
+        description="Message us on WhatsApp or send an enquiry with the form. Tell us about your project and one of our engineering leads will follow up within 24 hours."
         flowerRotation={40}
       />
 
@@ -32,12 +35,18 @@ export default function ContactPage() {
               </p>
               <div className="space-y-3 font-inter text-ink">
                 <div className="flex items-center gap-3">
+                  <WhatsAppIcon size={18} className="text-[#1FAF55]" />
+                  <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                    {PHONE_DISPLAY} (WhatsApp)
+                  </a>
+                </div>
+                <div className="flex items-center gap-3">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7A2331" strokeWidth="2" aria-hidden>
                     <rect x="3" y="5" width="18" height="14" rx="2" />
                     <path d="M3 7l9 6 9-6" />
                   </svg>
-                  <a href="mailto:bloommatrixtech@gmail.com" className="hover:underline">
-                    bloommatrixtech@gmail.com
+                  <a href={`mailto:${CONTACT_EMAIL}`} className="hover:underline">
+                    {CONTACT_EMAIL}
                   </a>
                 </div>
                 <div className="flex items-center gap-3">
@@ -45,9 +54,10 @@ export default function ContactPage() {
                     <path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z" />
                     <circle cx="12" cy="9" r="2.5" />
                   </svg>
-                  <span>Coimbatore, Tamil Nadu, India</span>
+                  <span>{ADDRESS_LINE}</span>
                 </div>
               </div>
+              <WhatsAppButton className="mt-6" />
             </div>
             <p className="font-inter text-sm text-ink/65 leading-relaxed max-w-sm">
               Bloom Matrix operates as a globally-oriented AI-first technology company, working

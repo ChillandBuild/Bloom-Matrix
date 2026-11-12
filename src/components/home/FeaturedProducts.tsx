@@ -2,7 +2,8 @@ import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import AnrilProductDemo from "@/components/AnrilProductDemo";
 import BrandHeadline from "@/components/brand/BrandHeadline";
-import { ANRIL, ASTROTAMIL } from "@/lib/content/products";
+import VisitAnrilButton from "@/components/VisitAnrilButton";
+import { ANRIL, CONSUMER_APP } from "@/lib/content/products";
 
 export default function FeaturedProducts() {
   return (
@@ -20,9 +21,9 @@ export default function FeaturedProducts() {
             />
             <p className="font-inter text-lg text-ink/65 mb-2">{ANRIL.tagline}</p>
             <p className="font-inter text-ink/65 leading-relaxed mb-8">{ANRIL.description}</p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4">
               <Link
-                href={ANRIL.href}
+                href={ANRIL.href ?? "/products/anril"}
                 className="bg-oxblood text-cream px-6 py-3 rounded-[2px] font-semibold text-center hover:opacity-90 transition-all"
               >
                 Explore Anril
@@ -33,6 +34,7 @@ export default function FeaturedProducts() {
               >
                 Start a project
               </Link>
+              <VisitAnrilButton />
             </div>
           </Reveal>
           <Reveal delay={0.15}>
@@ -48,10 +50,10 @@ export default function FeaturedProducts() {
               </p>
               <BrandHeadline
                 as="h3"
-                segments={[{ text: ASTROTAMIL.name }]}
+                segments={[{ text: CONSUMER_APP.name }]}
                 className="text-2xl text-ink mb-1"
               />
-              <p className="font-inter text-sm text-ink/65 max-w-xl">{ASTROTAMIL.description}</p>
+              <p className="font-inter text-sm text-ink/65 max-w-xl">{CONSUMER_APP.description}</p>
             </div>
             <Link
               href="/products"

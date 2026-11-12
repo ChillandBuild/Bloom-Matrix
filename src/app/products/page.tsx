@@ -4,13 +4,15 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import AnrilProductDemo from "@/components/AnrilProductDemo";
 import CTABand from "@/components/CTABand";
+import VisitAnrilButton from "@/components/VisitAnrilButton";
 import BrandHeadline from "@/components/brand/BrandHeadline";
 import { PRODUCTS } from "@/lib/content/products";
 
 export const metadata: Metadata = {
   title: "Products",
   description:
-    "Bloom Matrix's proprietary products: Anril, the AI-powered revenue acceleration platform, and AstroTamil, a consumer technology platform.",
+    "Bloom Matrix's own products: Anril, the AI-powered revenue acceleration platform, and a live consumer marketplace app.",
+  alternates: { canonical: "/products" },
 };
 
 export default function ProductsPage() {
@@ -59,12 +61,17 @@ export default function ProductsPage() {
                       </li>
                     ))}
                   </ul>
-                  <Link
-                    href={product.href}
-                    className="font-inter font-semibold text-ink border-b-2 border-platinum pb-0.5 hover:border-oxblood transition-colors self-start"
-                  >
-                    {product.slug === "anril" ? "Explore Anril →" : "Learn more →"}
-                  </Link>
+                  {product.href && (
+                    <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
+                      <Link
+                        href={product.href}
+                        className="font-inter font-semibold text-ink border-b-2 border-platinum pb-0.5 hover:border-oxblood transition-colors self-start"
+                      >
+                        {`Explore ${product.name} →`}
+                      </Link>
+                      {product.slug === "anril" && <VisitAnrilButton />}
+                    </div>
+                  )}
                   {product.slug === "anril" && (
                     <div className="mt-8">
                       <AnrilProductDemo />

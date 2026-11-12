@@ -30,6 +30,8 @@
   (308) to `/anril`. If the app's Vercel domain changes again, update all rewrite
   destinations here the same day — `/anril` goes blank otherwise.
   Don't remove without confirming Anril routing is meant to move elsewhere.
+- `vercel.json` also 301-redirects host `bloommatrix.in` → `https://www.bloommatrix.in`
+  as a safety net (the Vercel domain setting does the primary redirect).
 - `tsconfig.json` strict mode must stay on.
 - The `src/app` Next.js app is the tracked, real implementation. Do not treat
   the untracked root-level `index.html` / `style.css` / `script.js` / `assets/`
@@ -37,15 +39,30 @@
 
 ## File Map
 - `src/app/layout.tsx` — root layout, fonts, global metadata.
-- `src/app/page.tsx` — the single landing page: hero, services bento, Anril
-  product callout, contact form, "Why Bloom Matrix" section, footer.
+- `src/app/page.tsx` — homepage (hero + 3-step strip, positioning, services,
+  products, "Selected international engagements" — keep as is — FAQ, CTA).
+  Organization JSON-LD lives here only.
+- Other routes: `/services`, `/products`, `/products/anril` (SoftwareApplication
+  JSON-LD), `/about`, `/contact`, `/privacy`, `/terms`, `/insights` +
+  `/insights/[slug]` (posts in `src/lib/content/insights.ts`), and country
+  pages `/uae` `/uk` `/malaysia` `/singapore` (copy in
+  `src/lib/content/countries.ts`, layout `src/components/CountryLandingPage.tsx`).
+- `src/lib/site.ts` — single source for email, WhatsApp, GSTIN, LinkedIn, URLs.
+- Every page sets `alternates.canonical`; `src/app/sitemap.ts` holds a real
+  per-page lastModified date — bump it when a page's content changes.
+- `FAQAccordion` uses native `<details>` so answers are in server HTML, and
+  emits FAQPage JSON-LD itself.
 - `src/components/SiteHeader.tsx` / `SiteFooter.tsx` — shared chrome.
 - `src/components/brand/` — the brand primitives. `BrandFlower` is the single
   source of the flower (the "one-flower rule"); `LogoMark` (Cutout tile),
   `LogoWordmark` (frozen Bracket wordmark — never restyle), `LogoLockup`,
   and `BrandHeadline` (BM Serif + seeded-o / coral-tittle marks).
 - `src/hooks/useSpinningFlower.ts` + `src/lib/spin.ts` — hero flower momentum.
-- `src/components/ContactForm.tsx` — contact form panel.
+- `src/components/ContactForm.tsx` — contact form panel; `src/app/api/contact/route.ts`
+  sends via Resend to contact@bloommatrix.in and falls back to the Gmail inbox
+  if Resend rejects it (unverified sender domain). Env: `RESEND_API_KEY`,
+  optional `CONTACT_FROM_EMAIL` (needs bloommatrix.in verified in Resend),
+  optional `CONTACT_RECIPIENT`.
 - `src/app/icon.tsx` / `src/app/opengraph-image.tsx` — generated favicon and OG
   card. Both draw the flower unrotated and rotate via CSS: the OG renderer
   ignores SVG group transforms, and it cannot parse variable fonts (hence the

@@ -4,7 +4,8 @@ export type Product = {
   tagline: string;
   description: string;
   features: string[];
-  href: string;
+  /** On-site product page. Omitted when a product has no page to link to. */
+  href?: string;
 };
 
 export const ANRIL: Product = {
@@ -25,14 +26,17 @@ export const ANRIL: Product = {
   href: "/products/anril",
 };
 
-export const ASTROTAMIL: Product = {
-  slug: "astrotamil",
-  name: "AstroTamil",
-  tagline: "Consumer Technology Platform",
+/**
+ * Our live consumer app. Presented without its brand name and with no outside
+ * link, by decision of 2026-11-04 — never reintroduce the name on the site.
+ */
+export const CONSUMER_APP: Product = {
+  slug: "consumer-marketplace-app",
+  name: "Consumer Marketplace App",
+  tagline: "Live Consumer App",
   description:
-    "AstroTamil is a consumer technology platform delivering spirituality, lifestyle, and personalized digital experiences — built as part of Bloom Matrix's broader consumer technology and digital ecosystem work.",
-  features: ["Personalized Digital Experiences", "Lifestyle & Spirituality Content", "Consumer-First Design"],
-  href: "/products",
+    "A live consumer app we designed, built and run, on Android and the web. It connects users with 150+ experts through text and voice messages, with in-app payments.",
+  features: ["Android & Web", "150+ Experts", "Text & Voice Messages", "In-App Payments"],
 };
 
-export const PRODUCTS: Product[] = [ANRIL, ASTROTAMIL];
+export const PRODUCTS: Product[] = [ANRIL, CONSUMER_APP];

@@ -8,9 +8,10 @@ import { SERVICES } from "@/lib/content/services";
 import { SERVICES_FAQS } from "@/lib/content/faqs";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: { absolute: "Custom Software & Mobile App Development Services | Bloom Matrix" },
   description:
-    "Bloom Matrix's core service areas: AI agent development, product engineering, SaaS platform engineering, business automation, data & analytics, and consumer technology.",
+    "Custom software development, mobile app development, AI assistants, SaaS platforms, business automation and data analytics from Bloom Matrix, an AI-first software development company.",
+  alternates: { canonical: "/services" },
 };
 
 export default function ServicesPage() {
@@ -19,11 +20,11 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="Services"
         titleSegments={[
-          { text: "Six disciplines, " },
-          { text: "one integrated engineering practice", emphasis: true },
+          { text: "Custom software and app development, " },
+          { text: "with AI at the core", emphasis: true },
           { text: "." },
         ]}
-        description="Bloom Matrix combines AI, product engineering, SaaS architecture, automation, and data intelligence into a single long-term partnership — not a patchwork of vendors."
+        description="Bloom Matrix is an AI-first software development company. From custom software development and mobile app development to SaaS platforms, automation and analytics, we design, build and run it all as one long-term technology partner."
         flowerRotation={22}
       />
 

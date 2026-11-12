@@ -18,7 +18,7 @@ export default function LogoWordmark({ className, tone = "ink" }: LogoWordmarkPr
       className={`inline-flex items-center font-inter font-bold uppercase tracking-[0.14em] ${className ?? ""}`}
       style={{ color }}
     >
-      <BrandWordmarkText text="BLOOM MATRIX" />
+      <BrandWordmarkText text="Bloom Matrix" />
     </span>
   );
 }

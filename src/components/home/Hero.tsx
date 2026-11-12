@@ -7,6 +7,7 @@ import LogoMark from "@/components/brand/LogoMark";
 import BrandHeadline, { type HeadlineSegment } from "@/components/brand/BrandHeadline";
 import { useSpinningFlower } from "@/hooks/useSpinningFlower";
 import { useCoarsePointer } from "@/hooks/useCoarsePointer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -51,6 +52,13 @@ const DOT_MATRIX = {
 const GHOST_SIZE = 699; // 820 * 0.852 — matches the old ghost
 const MAIN_SIZE = 322; // 420 * 0.852, less ~10%
 const MOBILE_SIZE = 123; // 160 * 0.852, less ~10%
+
+/** The three-step "how it works" strip shown right under the headline. */
+const STEPS = [
+  "Tell us what you need.",
+  "We design and build it, with AI inside.",
+  "We launch it and keep improving it.",
+];
 
 /** Capability keywords, drawn from the documented technology expertise. */
 const CAPABILITIES = "Generative AI · LLM Agents · Voice AI · Multi-tenant SaaS";
@@ -156,10 +164,28 @@ export default function Hero() {
 
         <motion.p
           variants={item}
-          className="font-inter text-lg text-ink/65 max-w-md mb-9 leading-relaxed"
+          className="font-inter text-lg text-ink/65 max-w-md mb-8 leading-relaxed"
         >
-          An AI-first product engineering company for businesses that want more than software.
+          An AI company that builds custom software, apps and AI products to your exact
+          requirements.
         </motion.p>
+
+        <motion.div
+          variants={item}
+          className="flex flex-col items-start gap-5 mb-9 w-full max-w-lg"
+        >
+          <ol className="grid sm:grid-cols-3 gap-3 sm:gap-4 w-full">
+            {STEPS.map((step, index) => (
+              <li key={step} className="flex sm:flex-col gap-2 sm:gap-1.5 border-t border-ink/15 pt-2.5">
+                <span className="font-inter text-xs font-bold tracking-[0.14em] text-oxblood">
+                  {index + 1}.
+                </span>
+                <span className="font-inter text-sm text-ink/80 leading-snug">{step}</span>
+              </li>
+            ))}
+          </ol>
+          <WhatsAppButton />
+        </motion.div>
 
         <motion.div
           variants={item}

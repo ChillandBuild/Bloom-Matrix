@@ -7,6 +7,13 @@ const PAGES = [
   { name: "anril", path: "/products/anril" },
   { name: "about", path: "/about" },
   { name: "contact", path: "/contact" },
+  { name: "uae", path: "/uae" },
+  { name: "uk", path: "/uk" },
+  { name: "malaysia", path: "/malaysia" },
+  { name: "singapore", path: "/singapore" },
+  { name: "privacy", path: "/privacy" },
+  { name: "terms", path: "/terms" },
+  { name: "insights", path: "/insights" },
 ];
 
 for (const page_ of PAGES) {

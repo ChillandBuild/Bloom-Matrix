@@ -9,9 +9,11 @@ export default function PositioningStrip() {
           <BrandHeadline
             as="p"
             segments={[
-              { text: "Not an IT service provider. Not a website agency. " },
-              { text: "A single long-term technology partner", emphasis: true },
-              { text: " — from idea to deployment, and every evolution after." },
+              {
+                text: "An AI-first software development company for custom software development, mobile app development and AI products. ",
+              },
+              { text: "One long-term technology partner", emphasis: true },
+              { text: ", from idea to launch, and every evolution after." },
             ]}
             className="text-2xl md:text-3xl text-cream leading-snug"
           />

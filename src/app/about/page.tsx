@@ -5,12 +5,23 @@ import FAQAccordion from "@/components/FAQAccordion";
 import CTABand from "@/components/CTABand";
 import BrandHeadline from "@/components/brand/BrandHeadline";
 import { ABOUT_FAQS } from "@/lib/content/faqs";
+import { GSTIN } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About",
   description:
     "Bloom Matrix's founding philosophy, vision, mission, and core values — an AI-first product engineering company built to be a long-term technology partner.",
+  alternates: { canonical: "/about" },
 };
+
+/**
+ * Office / team photos for the trust block. The Admin is sending 2–3; to add
+ * one, put the file in public/images/office/ and add an entry here with a
+ * short alt text describing the photo. The photo row only renders once at
+ * least one entry exists, so the live page never shows empty boxes. No
+ * founder names or personal details in photos' alt text or captions.
+ */
+const OFFICE_PHOTOS: { src: string; alt: string }[] = [];
 
 const CORE_VALUES = [
   {
@@ -53,9 +64,9 @@ export default function AboutPage() {
       <section className="bg-cream py-24">
         <div className="max-w-4xl mx-auto px-container-margin space-y-16">
           <Reveal>
-            <p className="font-inter text-xs uppercase tracking-[0.14em] text-oxblood font-bold mb-3">
+            <h2 className="font-inter text-xs uppercase tracking-[0.14em] text-oxblood font-bold mb-3">
               Founding Philosophy
-            </p>
+            </h2>
             <BrandHeadline
               as="p"
               segments={[
@@ -74,7 +85,7 @@ export default function AboutPage() {
 
           <div className="grid md:grid-cols-2 gap-10">
             <Reveal>
-              <p className="font-inter text-xs uppercase tracking-[0.14em] text-oxblood font-bold mb-3">Vision</p>
+              <h2 className="font-inter text-xs uppercase tracking-[0.14em] text-oxblood font-bold mb-3">Vision</h2>
               <p className="font-inter text-ink/65 leading-relaxed">
                 To become a globally recognized technology company building intelligent products
                 and digital ecosystems that redefine how businesses and communities interact with
@@ -82,7 +93,7 @@ export default function AboutPage() {
               </p>
             </Reveal>
             <Reveal delay={0.1}>
-              <p className="font-inter text-xs uppercase tracking-[0.14em] text-oxblood font-bold mb-3">Mission</p>
+              <h2 className="font-inter text-xs uppercase tracking-[0.14em] text-oxblood font-bold mb-3">Mission</h2>
               <p className="font-inter text-ink/65 leading-relaxed">
                 To combine artificial intelligence, engineering excellence, and product innovation
                 to create scalable digital ecosystems that deliver meaningful business impact.
@@ -92,9 +103,9 @@ export default function AboutPage() {
 
           <div>
             <Reveal>
-              <p className="font-inter text-xs uppercase tracking-[0.14em] text-oxblood font-bold mb-6">
+              <h2 className="font-inter text-xs uppercase tracking-[0.14em] text-oxblood font-bold mb-6">
                 Core Values
-              </p>
+              </h2>
             </Reveal>
             <div className="grid md:grid-cols-3 gap-6">
               {CORE_VALUES.map((value, index) => (
@@ -129,6 +140,42 @@ export default function AboutPage() {
               ))}
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      <section className="bg-cream py-24 border-t border-ink/10">
+        <div className="max-w-4xl mx-auto px-container-margin">
+          <Reveal>
+            <div className="border-l-2 border-oxblood pl-6 md:pl-8">
+              <BrandHeadline
+                as="h2"
+                segments={[
+                  { text: "A registered technology company " },
+                  { text: "in India", emphasis: true },
+                ]}
+                className="text-3xl md:text-4xl text-ink mb-4"
+              />
+              <p className="font-inter text-ink/65 leading-relaxed max-w-2xl">
+                Bloom Matrix is a registered business in India (GSTIN {GSTIN}), with our
+                engineering office in Coimbatore, Tamil Nadu. We design, build and run our own AI
+                and software products, and we build custom products for clients.
+              </p>
+            </div>
+          </Reveal>
+          {OFFICE_PHOTOS.length > 0 && (
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 mt-12">
+              {OFFICE_PHOTOS.map((photo) => (
+                <Reveal key={photo.src}>
+                  <img
+                    src={photo.src}
+                    alt={photo.alt}
+                    loading="lazy"
+                    className="w-full aspect-[4/3] object-cover border border-ink/10"
+                  />
+                </Reveal>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

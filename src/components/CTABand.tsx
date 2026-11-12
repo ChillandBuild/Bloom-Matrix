@@ -29,7 +29,7 @@ const DEFAULT_TITLE: HeadlineSegment[] = [
 
 export default function CTABand({
   titleSegments = DEFAULT_TITLE,
-  description = "Book a strategy call and talk through what you're building — no sales script, just an engineering-led conversation.",
+  description = "Message us on WhatsApp or send an enquiry and talk through what you're building. No sales script, just an engineering-led conversation.",
   secondaryCta = DEFAULT_SECONDARY_CTA,
 }: CTABandProps) {
   return (

@@ -137,14 +137,35 @@ publicly at `www.bloommatrix.in/anril` via `vercel.json` — see
 [[stack-and-rules]]. The product page route is `/products/anril`;
 `/products/aira` permanently redirects to it via `next.config.ts` redirects.)
 
-### AstroTamil
-A consumer technology platform delivering spirituality, lifestyle, and
-personalized digital experiences.
+### Consumer Marketplace App (do NOT name it on the site)
+Since the 2026-11-04 website brief, the name "AstroTamil" must not appear
+anywhere on the website (pages, headings, links, meta). Use only:
+"Consumer Marketplace App — A live consumer app we designed, built and run, on
+Android and the web. It connects users with 150+ experts through text and
+voice messages, with in-app payments." The card has no outside link.
 
 ### Future Products
 Bloom Matrix continuously researches and develops new technology products
 that solve meaningful business and consumer problems. Do not invent specific
 future products — only what's documented here or told to you directly.
+
+## Public Contact & Registration (source: 2026-11-04 brief)
+- Email: contact@bloommatrix.in (forwards to the team Gmail; the Gmail address
+  must not appear on the site).
+- WhatsApp: +91 88072 33844. No booking link — WhatsApp and the contact form
+  are the only two ways to reach us.
+- Registered in India, GSTIN 33ABEFB3573A1Z0. Public address line is only
+  "Coimbatore, Tamil Nadu, India" — never the GST registration address.
+- LinkedIn: https://www.linkedin.com/company/142910910/
+- Anril's own website: https://anrilaitech.com
+- No founder names or personal details on the site.
+- Country pages (/uae, /uk, /malaysia, /singapore) must never claim existing
+  clients in those countries.
+- Keyword research (Keyword Planner, 4 Nov 2026): buyers search "software
+  development company", "custom software development", "app developer"; UK
+  says "bespoke". This is approved copy and overrides the older "not primarily
+  a software development company" guidance for titles/headings/intro text.
+All of these live in `src/lib/site.ts` — change them there only.
 
 ## Target Customers
 Startups, Small & Medium Businesses, Enterprises, organizations undergoing

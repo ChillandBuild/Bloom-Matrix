@@ -8,16 +8,19 @@ import GlobalDelivery from "@/components/home/GlobalDelivery";
 import HowWeWork from "@/components/home/HowWeWork";
 import FAQSection from "@/components/home/FAQSection";
 import CTABand from "@/components/CTABand";
+import { jsonLd, organizationSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Bloom Matrix | AI-First Product Engineering Company",
+  title: { absolute: "Bloom Matrix | AI-First Software & App Development Company" },
   description:
-    "Bloom Matrix designs, engineers, and continuously evolves intelligent digital products, enterprise software, and AI-powered platforms — including Anril, our AI revenue acceleration platform.",
+    "Bloom Matrix is an AI-first software and mobile app development company. We design, build and run custom software, SaaS platforms and AI assistants for businesses that want one long-term technology partner.",
+  alternates: { canonical: "/" },
 };
 
 export default function Home() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(organizationSchema())} />
       <Hero />
       <PositioningStrip />
       <ValuePropsSticky />

@@ -9,7 +9,7 @@ export const HOME_FAQS: FAQItem[] = [
   {
     question: "What does Bloom Matrix actually build?",
     answer:
-      "Bloom Matrix builds AI systems, enterprise applications, multi-tenant SaaS platforms, business automation, and data & analytics tooling, plus consumer technology products such as AstroTamil.",
+      "Bloom Matrix builds AI systems, enterprise applications, multi-tenant SaaS platforms, business automation, and data & analytics tooling, plus consumer technology products such as a live consumer marketplace app that we designed, built and run.",
   },
   {
     question: "What is Anril?",

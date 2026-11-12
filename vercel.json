@@ -1,6 +1,17 @@
 {
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "bloommatrix.in"
+        }
+      ],
+      "destination": "https://www.bloommatrix.in/:path*",
+      "statusCode": 301
+    },
+    {
       "source": "/aira",
       "destination": "/anril",
       "permanent": true

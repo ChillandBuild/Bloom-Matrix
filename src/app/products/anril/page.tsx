@@ -4,6 +4,8 @@ import Reveal from "@/components/Reveal";
 import AnrilLiveSimulation from "@/components/AnrilLiveSimulation";
 import FAQAccordion from "@/components/FAQAccordion";
 import CTABand from "@/components/CTABand";
+import VisitAnrilButton from "@/components/VisitAnrilButton";
+import { anrilSoftwareSchema, jsonLd } from "@/lib/schema";
 import BrandHeadline from "@/components/brand/BrandHeadline";
 import { ANRIL } from "@/lib/content/products";
 import { ANRIL_FAQS } from "@/lib/content/faqs";
@@ -12,11 +14,13 @@ export const metadata: Metadata = {
   title: "Anril — AI Revenue Acceleration Platform",
   description:
     "Anril is Bloom Matrix's AI-powered revenue acceleration platform — conversational AI, AI telecalling, CRM, lead management, and workflow automation in one multi-tenant SaaS system.",
+  alternates: { canonical: "/products/anril" },
 };
 
 export default function AnrilPage() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(anrilSoftwareSchema(ANRIL.description))} />
       <PageHero
         eyebrow="Flagship Product"
         titleSegments={[{ text: ANRIL.name }]}
@@ -44,6 +48,7 @@ export default function AnrilPage() {
                 </li>
               ))}
             </ul>
+            <VisitAnrilButton variant="solid" className="mt-8" />
           </Reveal>
           <Reveal delay={0.15}>
             <AnrilLiveSimulation />
@@ -75,7 +80,7 @@ export default function AnrilPage() {
           { text: "Anril", emphasis: true },
           { text: " in action." },
         ]}
-        description="Book a strategy call and we'll walk through how Anril fits into your existing lead and revenue workflows."
+        description="Send us an enquiry or message us on WhatsApp, and we'll walk through how Anril fits into your existing lead and revenue workflows."
         secondaryCta={{ href: "/anril", label: "Open Anril", isExternalApp: true }}
       />
     </main>
