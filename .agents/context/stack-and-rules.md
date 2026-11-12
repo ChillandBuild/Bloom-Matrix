@@ -24,12 +24,12 @@
   (`src/components/ContactForm.tsx`) and an external product (Anril) linked in.
 
 ## Hard Invariants
-- `vercel.json` rewrites `/anril` and `/anril/:path*` to the separately deployed Anril
-  app at `https://anrilai.vercel.app/anril` (that app is built with basePath `/anril`;
-  its root `/` is a 404 by design). Old `/aira` and `/aira/:path*` permanently redirect
-  (308) to `/anril`. If the app's Vercel domain changes again, update all rewrite
-  destinations here the same day — `/anril` goes blank otherwise.
-  Don't remove without confirming Anril routing is meant to move elsewhere.
+- `vercel.json` permanently redirects `/anril`, `/anril/:path*`, `/aira` and
+  `/aira/:path*` to the Anril app's own domain `https://www.anrilaitech.com`
+  (decided 2026-11-12: the app dropped its `/anril` basePath, so the old
+  proxy rewrite to `anrilai.vercel.app/anril` 404'd). Do not reinstate a
+  rewrite/proxy: the app's canonical is anrilaitech.com and its root-level
+  `/_next` assets would collide with this app's.
 - `vercel.json` also 301-redirects host `bloommatrix.in` → `https://www.bloommatrix.in`
   as a safety net (the Vercel domain setting does the primary redirect).
 - `tsconfig.json` strict mode must stay on.

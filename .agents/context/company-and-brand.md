@@ -132,10 +132,9 @@ lead management, AI assistants, AI telecalling, manual telecalling,
 analytics, workflow automation, and integrations. Multi-tenant SaaS
 architecture — each customer connects and manages their own communication
 channels and business data.
-(The live app is deployed at `https://anrilai.vercel.app/anril` and served
-publicly at `www.bloommatrix.in/anril` via `vercel.json` — see
-[[stack-and-rules]]. The product page route is `/products/anril`;
-`/products/aira` permanently redirects to it via `next.config.ts` redirects.)
+(The live app and its marketing site are at `https://www.anrilaitech.com`;
+`www.bloommatrix.in/anril` permanently redirects there — see [[stack-and-rules]].
+The on-site product page is `/products/anril`; `/products/aira` redirects to it.)
 
 ### Consumer Marketplace App (do NOT name it on the site)
 Since the 2026-11-04 website brief, the name "AstroTamil" must not appear

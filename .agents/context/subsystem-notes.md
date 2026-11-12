@@ -30,17 +30,10 @@ plain text). See [[log]] for the dated decision entry — the "never restyle"
 guidance no longer applies to this component.
 
 ## Anril cross-link
-The live Anril app is served at `/anril` via `vercel.json` rewrites to the
-external deployment `https://anrilai.vercel.app/anril`. The Anril product
-page's CTA ("Open Anril") links there with a plain `<a>` (CTABand
-`secondaryCta.isExternalApp`) — `next/link` would try to client-route a path
-this app doesn't own.
-
-Gotcha: the external app is built with basePath `/anril`, so everything it
-serves (pages, `_next` assets, icons) lives under `/anril/...` and its root `/`
-is a 404 — rewrites must keep the `/anril` prefix on the destination. Old
-`/aira` URLs redirect (308) to `/anril` in `vercel.json`. History: the app was
-first at `aira-ai-mvp.vercel.app/aira`; that deployment was removed
-(DEPLOYMENT_NOT_FOUND on 2026-10-07), which blanked `/anril` until the
-destinations were repointed. The on-site product page is `/products/anril`;
-`/products/aira` permanently redirects to it via `next.config.ts` redirects.
+`/anril` (and legacy `/aira`) permanently redirect to `https://www.anrilaitech.com`
+via `vercel.json` (2026-11-12). History: `/anril` used to be a rewrite/proxy to
+the external app at `anrilai.vercel.app/anril` (basePath `/anril`); the app was
+later redeployed at its root with anrilaitech.com as canonical, so the proxy
+404'd. The Anril product page's "Open Anril" CTA links straight to
+`https://www.anrilaitech.com/login` with a plain `<a>`, and "Visit Anril
+website" buttons (`VisitAnrilButton`) open anrilaitech.com in a new tab.

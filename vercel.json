@@ -12,24 +12,24 @@
       "statusCode": 301
     },
     {
+      "source": "/anril",
+      "destination": "https://www.anrilaitech.com/",
+      "permanent": true
+    },
+    {
+      "source": "/anril/:path*",
+      "destination": "https://www.anrilaitech.com/:path*",
+      "permanent": true
+    },
+    {
       "source": "/aira",
-      "destination": "/anril",
+      "destination": "https://www.anrilaitech.com/",
       "permanent": true
     },
     {
       "source": "/aira/:path*",
-      "destination": "/anril/:path*",
+      "destination": "https://www.anrilaitech.com/:path*",
       "permanent": true
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/anril",
-      "destination": "https://anrilai.vercel.app/anril"
-    },
-    {
-      "source": "/anril/:path*",
-      "destination": "https://anrilai.vercel.app/anril/:path*"
     }
   ]
 }
