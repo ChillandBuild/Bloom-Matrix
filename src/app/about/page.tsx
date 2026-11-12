@@ -15,13 +15,25 @@ export const metadata: Metadata = {
 };
 
 /**
- * Office / team photos for the trust block. The Admin is sending 2–3; to add
- * one, put the file in public/images/office/ and add an entry here with a
- * short alt text describing the photo. The photo row only renders once at
- * least one entry exists, so the live page never shows empty boxes. No
- * founder names or personal details in photos' alt text or captions.
+ * Office photos for the trust block (Coimbatore engineering office, supplied
+ * 2026-11-12). Files live in public/images/office/ as 1200x900 WebP. To swap
+ * one, replace the file or the entry, and keep the alt text a short
+ * description of the photo. No founder names or personal details in alt text.
  */
-const OFFICE_PHOTOS: { src: string; alt: string }[] = [];
+const OFFICE_PHOTOS: { src: string; alt: string }[] = [
+  {
+    src: "/images/office/office-team-room.webp",
+    alt: "Bloom Matrix engineering office in Coimbatore with shared desks, team posters and a sprint-plan whiteboard",
+  },
+  {
+    src: "/images/office/office-green-room.webp",
+    alt: "Bright team room with a green feature wall, workstations and large windows",
+  },
+  {
+    src: "/images/office/office-workstations.webp",
+    alt: "Developer workstations with monitors beside a whiteboard showing the November sprint plan",
+  },
+];
 
 const CORE_VALUES = [
   {
@@ -163,13 +175,16 @@ export default function AboutPage() {
             </div>
           </Reveal>
           {OFFICE_PHOTOS.length > 0 && (
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 mt-12">
-              {OFFICE_PHOTOS.map((photo) => (
-                <Reveal key={photo.src}>
+            <div className="grid sm:grid-cols-3 gap-4 mt-12">
+              {OFFICE_PHOTOS.map((photo, index) => (
+                <Reveal key={photo.src} delay={index * 0.08}>
                   <img
                     src={photo.src}
                     alt={photo.alt}
+                    width={1200}
+                    height={900}
                     loading="lazy"
+                    decoding="async"
                     className="w-full aspect-[4/3] object-cover border border-ink/10"
                   />
                 </Reveal>
